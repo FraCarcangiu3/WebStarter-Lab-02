@@ -1,12 +1,3 @@
-
-
-
-          
-# Sistema di Gestione Eventi - Guida per Principianti
-
-Ho analizzato il file README.MD e vedo che posso migliorarlo per renderlo più chiaro e comprensibile per chi non ha esperienza di programmazione. Ecco una versione migliorata del file con spiegazioni più dettagliate di ogni funzione e API:
-
-```markdown:/Users/francesco03/Desktop/P.WEB/[esercizi lezione]/esercizio_eventi/README.MD
 # Sistema di Gestione Eventi - Lab 02 - FastAPI
 
 Questo progetto è un'applicazione web per la gestione di eventi e partecipanti, sviluppata con FastAPI e Jinja2. L'applicazione permette di creare eventi, visualizzare i dettagli degli eventi e registrare partecipanti.
