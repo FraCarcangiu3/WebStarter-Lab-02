@@ -196,8 +196,6 @@ In parole semplici: quando un utente vuole registrarsi a un evento, il sistema m
  
 # Spiegazione della Comunicazione tra Frontend e Backend
 
-Ciao! Ho analizzato il README del tuo progetto di gestione eventi e vorrei spiegarti in modo più chiaro come avviene la comunicazione tra frontend e backend, pensando che tu sia un principiante.
-
 ## Cosa sono Frontend e Backend?
 
 Prima di tutto, facciamo chiarezza su questi termini:
