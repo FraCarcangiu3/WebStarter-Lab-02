@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Partecipanti - {{ event.title }} - Sistema Gestione Eventi{% endblock %}
+
+{% block content %}
+<div class="participants-container">
+    <h2>Partecipanti all'evento: {{ event.title }}</h2>
+    <div class="event-info">
+        <div class="info-item">
+            <strong>Data:</strong> {{ event.date }}
+        </div>
+        <div class="info-item">
+            <strong>Luogo:</strong> {{ event.location }}
+        </div>
+    </div>
+    
+    {% if participants %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for participant in participants %}
+                    <tr>
+                        <td>{{ participant.first_name }}</td>
+                        <td>{{ participant.last_name }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Non ci sono ancora partecipanti registrati per questo evento.</p>
+    {% endif %}
+    
+    <div class="actions">
+        <a href="/events/{{ event.id }}/register" class="btn">Registra Nuovo Partecipante</a>
+        <a href="/events/{{ event.id }}" class="btn">Torna ai Dettagli Evento</a>
+        <a href="/events" class="btn">Torna alla Lista Eventi</a>
+    </div>
+</div>
+{% endblock %}

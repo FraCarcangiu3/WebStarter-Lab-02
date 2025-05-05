@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Eventi - Sistema Gestione Eventi{% endblock %}
+
+{% block content %}
+<div class="events-container">
+    <h2>Eventi Disponibili</h2>
+    
+    {% if events %}
+        <div class="event-list">
+            {% for event in events %}
+                <div class="event-card">
+                    <h2>{{ event.title }}</h2>
+                    <div class="date">Data: {{ event.date }}</div>
+                    <div class="location">Luogo: {{ event.location }}</div>
+                    <div class="description">{{ event.description }}</div>
+                    <div class="actions">
+                        <a href="/events/{{ event.id }}" class="btn">Dettagli</a>
+                        <a href="/events/{{ event.id }}/register" class="btn">Registrati</a>
+                        <a href="/events/{{ event.id }}/participants" class="btn">Partecipanti</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Non ci sono eventi disponibili al momento.</p>
+    {% endif %}
+    
+    <div class="actions">
+        <a href="/events/new" class="btn">Crea Nuovo Evento</a>
+    </div>
+</div>
+{% endblock %}

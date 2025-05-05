@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistema Gestione Eventi{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Sistema Gestione Eventi</h1>
+        <nav>
+            <ul>
+                <li><a href= "{{ url_for('read_root')}}">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        <div class="welcome-section">
+            <h2>Benvenuto nel Sistema di Gestione Eventi</h2>
+            <p>Questa applicazione ti permette di gestire eventi e partecipanti in modo semplice ed efficiente.</p>
+            
+            <div class="action-buttons">
+                <div class="action-section">
+                    <h3>Gestione Eventi</h3>
+                    <p>Visualizza e gestisci tutti gli eventi e i loro partecipanti</p>
+                    <a href="/events" class="btn btn-primary">Accedi alla Gestione Eventi</a>
+                </div>
+                
+                <div class="action-section">
+                    <h3>Registrazione Partecipanti</h3>
+                    <p>Registrati come partecipante a un evento disponibile</p>
+                    <a href="/events" class="btn btn-secondary">Registrati a un Evento</a>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Sistema Gestione Eventi</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Registrazione - {{ event.title }} - Sistema Gestione Eventi{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Registrazione all'evento: {{ event.title }}</h2>
+    
+    <div class="event-info">
+        <div class="info-item">
+            <strong>Data:</strong> {{ event.date }}
+        </div>
+        <div class="info-item">
+            <strong>Luogo:</strong> {{ event.location }}
+        </div>
+    </div>
+    
+    {% if error %}
+        <div class="error-message">
+            {{ error }}
+        </div>
+    {% endif %}
+    
+    <form action="{{ url_for('create_participant_form', event_id=event.id) }}" method="post">
+        <div class="form-group">
+            <label for="first_name">Nome:</label>
+            <input type="text" id="first_name" name="first_name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="last_name">Cognome:</label>
+            <input type="text" id="last_name" name="last_name" required>
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn">Registrati</button>
+            <a href="/events/{{ event.id }}" class="btn">Annulla</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

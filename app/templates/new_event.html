@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Nuovo Evento - Sistema Gestione Eventi{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Crea un Nuovo Evento</h2>
+    
+    {% if error %}
+        <div class="error-message">
+            {{ error }}
+        </div>
+    {% endif %}
+    
+    <!-- devo usare url_for per collegarmi alla funzione create_event_api-->
+    <form action="{{ url_for('create_event_form') }}" method="post">
+        <div class="form-group">
+            <label for="title">Titolo:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="description">Descrizione:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="date">Data (YYYY-MM-DD):</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="location">Luogo:</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn">Crea Evento</button>
+            <a href="/events" class="btn">Annulla</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

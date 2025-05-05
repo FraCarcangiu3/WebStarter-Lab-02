@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}{{ event.title }} - Sistema Gestione Eventi{% endblock %}
+
+{% block content %}
+<div class="event-detail">
+    <h2>{{ event.title }}</h2>
+    
+    <div class="event-info">
+        <div class="info-item">
+            <strong>Data:</strong> {{ event.date }}
+        </div>
+        <div class="info-item">
+            <strong>Luogo:</strong> {{ event.location }}
+        </div>
+    </div>
+    
+    <div class="event-description">
+        <h3>Descrizione</h3>
+        <p>{{ event.description }}</p>
+    </div>
+    
+    <div class="event-actions">
+        <a href="/events/{{ event.id }}/register" class="btn">Registrati all'Evento</a>
+        <a href="/events/{{ event.id }}/participants" class="btn">Visualizza Partecipanti</a>
+        <a href="/events" class="btn">Torna alla Lista Eventi</a>
+    </div>
+</div>
+{% endblock %}
