@@ -18,9 +18,13 @@ async def read_root(request: Request):
 
 # Sezione Gestione Eventi
 @router.get("/events", response_class=HTMLResponse)
-async def list_events(request: Request):
+async def list_events(request: Request): 
     all_events = list(events_db.values())
     return templates.TemplateResponse("events.html", {"request": request, "events": all_events})
+#templates.TemplateResponse è una funzione che crea una risora HTML utilizzando un template Jinja2 
+#in pratica prende un file HTML (il mio template) e lo riempie con i dati che vogliamo mostrare all'utente
+
+
 
 @router.get("/events/new", response_class=HTMLResponse)
 async def new_event_form(request: Request, error: Optional[str] = None):
