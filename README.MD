@@ -8,7 +8,7 @@ Questo progetto è un'applicazione web per la gestione di eventi e partecipanti,
 2. [Struttura del Progetto](#struttura-del-progetto)
 3. [Funzionalità Frontend](#funzionalità-frontend)
 4. [API Backend](#api-backend)
-5. [Comunicazione Frontend-Backend](#spiegazione-della-comunicazione-tra-frontend-e-backend) (#comunicazione-frontend-backend)
+5. [Comunicazione Frontend-Backend](#spiegazione-della-comunicazione-tra-frontend-e-backend)
 6. [Modelli di Dati](#modelli-di-dati)
 7. [Guida all'Installazione](#guida-allinstallazione)
 8. [Guida all'Uso](#guida-alluso)
